@@ -54,6 +54,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: black;
+    size: 10px;
 }
 
 nav ul li a:hover {
@@ -137,4 +138,25 @@ li:last-child > .slide-img {
     background-repeat: no-repeat;    
     background-position: center;
     background-size : contain;
+}
+
+/* menu */
+#menu-box{
+    display: flex;
+    list-style-type: none;
+    margin: 0px 40px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-icon{
+margin-right: 10px;
+}
+
+.menu-icon > img {
+    width: 40px;
+    height: 40px;
 }
