@@ -15,8 +15,10 @@ header {
     max-width: 970px;
     box-sizing: border-box; 
     background-color: white; 
+    opacity: 100%;
     position: fixed;
     top: 0;
+    z-index: 0;
 }
 
 .logo {
@@ -31,6 +33,7 @@ header > nav {
     justify-content: center;
     align-items: center;
     height: 100px;
+    background-color: white;
 }
 
 nav ul {
@@ -182,3 +185,57 @@ li:last-child > .slide-img {
 }
 
 /* popular-sevice */
+#popular-service-wrap > h2{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#popular-service-wrap{
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+
+#popular-service-box-wrap{
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#popular-service{
+    margin: 10px;
+    padding: 0;
+    width: 231px;  
+    border: 1px solid red;
+
+    display: flex;
+    align-items: center;
+}
+
+.popluar-img-wrap > img{
+    width: 231px;   
+    height: 153px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+.view-title{
+    width: 100%;
+    height: 21px;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.view-title, .view-count{
+    text-align: left;   
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.view-count{
+    height: 19px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(115, 115, 115);
+
+}
