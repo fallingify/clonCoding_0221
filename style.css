@@ -89,8 +89,11 @@ nav ul li a:hover {
 
 /* banner */
 main{
+    max-width: 970px;
     margin-top: 100px;
     position: relative; 
+    display: block;
+    align-items: center;
     /* border:1px solid red; */
 }
 
@@ -269,5 +272,77 @@ li:last-child > .slide-img {
     height: 16px;
 }
 
-/* 숨은고수를 발견했어요 */
 
+/* 베스트리뷰(숨은 고수를 발견했어요) */
+#review-wrap{
+    margin:0;
+    padding: 0;
+    /* border: 1px solid red; */
+    width: 60.625rem;
+}
+
+#review-box-wrap{
+    display: flex;
+    justify-content: center;
+    border: 1px solid orange;
+}
+
+.review-box{
+    width: calc(50% - 0.5rem);
+    border:1px solid green;
+}
+
+.pro-info-wrap > img{
+    width: 3rem;
+    height: 3rem;   
+    margin-right: 0.75rem;
+    border: 0.0625rem solid #f2f2f2;
+    border-radius: 50%;
+    
+}
+
+.pro-info-wrap{
+    display: flex;
+}
+
+
+
+.pro-name{
+    margin-top: 0.125rem;
+    font-weight: 700;
+}
+.pro-sector{
+    font-weight: 500;
+    color: #737373;
+    white-space: nowrap;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.best-score > ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+.best-score > ul > li{
+    margin-right: 0.02rem;  
+}
+
+.best-content  > p{
+    height: 3.8125rem;
+    font-size: .875rem;
+    margin: 0 0 0.5rem;
+    max-height: 4.5em;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+
+.best-content > div{
+    font-size: .75rem;
+    color: #737373;
+}
