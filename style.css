@@ -2,6 +2,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 #content-wrap{
@@ -157,7 +159,7 @@ li:last-child > .slide-img {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 1.5em;
     padding: 0
@@ -190,25 +192,36 @@ li:last-child > .slide-img {
     margin-bottom: 20px;
 }
 #popular-service-wrap{
-    margin: 0;
-    padding: 0;
-    border: 1px solid red;
+    padding:0;
+    margin: auto auto 5rem;
+    /* border: 1px solid red; */
 }
 
 #popular-service-box-wrap{
     width: 300px;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding: 0;
+    margin: auto auto 6rem;
 }
 
+.popular-service-wrap-wrap{
+    display: block;
+    box-sizing: border-box;
+    padding: 0 0.3rem;
+
+}
 #popular-service{
-    margin: 10px;
+    margin: 0;
     padding: 0;
-    width: 231px;  
-    border: 1px solid red;
+    padding-left: 0.3rem;
+    width: 60rem;
+    /* border: 1px solid red; */
 
     display: flex;
     align-items: center;
+    overflow: hidden;
+
 }
 
 .popluar-img-wrap > img{
@@ -232,10 +245,29 @@ li:last-child > .slide-img {
 }
 
 .view-count{
-    height: 19px;
+    padding: 0;
+    height: 16px;
     width: 100%;
     font-size: 14px;
     font-weight: 400;
     color: rgb(115, 115, 115);
+    display: inline;
+    align-content: center;
 
 }
+
+.view-count-wrap{
+    display: flex;
+    height: 16px;
+    padding: 0;
+
+}
+
+.view-count-wrap > img{
+    margin-right: 0.375rem;
+    width: 16px;
+    height: 16px;
+}
+
+/* 숨은고수를 발견했어요 */
+
