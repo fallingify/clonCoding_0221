@@ -626,38 +626,350 @@ p{
 
 .slide-item {
     position: relative;
-    width: 500px;
-    height: 250px;
-    border: 1px solid red;
     padding: 0 0.5rem;
+    /* width: 100%;
+    height: 100%; */
 }
 
 .slide-item-txt-wrap {
+    margin: 0;
     position: absolute;
-    top: 6rem;
+    left: 1rem;
+    top: 10rem;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
     color: white;
     font-size: smaller;
-    text-align: center;
     overflow: hidden;
+}
+.slide-item-txt-top{
+    width: 85%;
+    margin: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.slide-item-txt-bottom{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.slide-item-img{
+    width: 230px;
+    height: 230px;
+    background-color: #323232;
+    border-radius: 8px;
 }
 
 .slide-item-img > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 8px;
+    opacity: 0.7;    
 }
 
 #portfolio-slide-track {
     display: flex;
-    justify-content: space-around;
-    overflow: hidden;
+    justify-content: space-evenly;
     margin: 0; 
     padding: 0;
+    overflow: hidden;
+    /* height: 500px; */
+}
+#portfolio-container{
+    padding: 0;
+    /* margin: auto auto 5rem; */
+}
+
+
+#portfolio-slide-container{
+    padding: 0;
+    margin: auto auto 5rem;
+
+}
+
+.master-profile-var-wrap{
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: .75rem;
+    line-height: 1.25rem;
+}
+
+
+.master-profile-img{
+    border-radius: 20px;
+    width: 22px;
+    height: 22px;
+    margin-right: 0.5rem;
+    background-size: contain
+}
+
+/* 지금 인기있는 고수 */
+.hot-master-container{
+    padding:0;
+    margin: auto auto 5rem;
     
-    width: 100vw;
+    width : 100%;
+    height: 500px;
+    border: 1px solid red;
+}
+#keyword-wrap{
+    width: 100%;
+    
+}
+
+.keyword-btn {
+
+    padding:0.5rem 0.625rem;
+    margin: 0 0.5rem 0.5rem 0;
+
+    border: none;
+    border-radius: 8px;
+
+
+    transition-duration: 0.4s;
+
+    font-size: .875rem;
+    font-weight: 400;
+
+    background-color: #f4f4f4;
+
+}
+
+.keyword-btn:first-child{
+    background-color: #eafaf9;
+}
+.keyword-btn:first-child > a{
+    color: #00c7ae;
+}
+
+.keyword-btn:hover{
+    opacity: 60;
+    color: #323232;
+    background-color: #32323230;
+}
+
+
+/* 카드슬라이드 */
+.hot-master-card-list{
+
+    margin: 0;
+    padding:0;
+    
+    width: 100%;
+
+}
+
+#hot-master-card-track{
+    width: auto;
+    /* margin: 0;  */
+    padding:0;
+    
+    display: flex;
+    justify-content: space-evenly;
+
+    overflow: hidden;
+
+
+    margin: auto auto 5rem;
+}
+
+.card-subinfo{
+    font-size: .6rem;
+    color: #737373;
+    display: flex;
+
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-subinfo > p{
+    margin-right: 5px;
+}
+
+.master-card-container{
+    padding: 0.73rem;
+}
+.master-card{
+    width: 11rem;
+    height: 11rem;
+    background-color: #fafafa;
+    border-radius: 8px;
+}
+
+.card-top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
+}
+.card-top-img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 0.0625rem solid #f2f2f2;
+    border-radius: 50%;
+    
+    margin: 0.7rem;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNTYiIHZpZXdCb3g9IjAgMCA1NiA1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTS0xMTItMjE4NWgxMTcwdjUzNzFILTExMnoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIgLTEyKSI+CiAgICAgICAgICAgIDxyZWN0IGZpbGw9IiNGMkYyRjIiIHdpZHRoPSIxODIiIGhlaWdodD0iMTgyIiByeD0iOCIvPgogICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMiAxMikiPgogICAgICAgICAgICAgICAgPGNpcmNsZSBmaWxsPSIjRDRFMEZFIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGN4PSIyOCIgY3k9IjI4IiByPSIyOCIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTM0LjI3IDE2LjA3OGEzLjI3OCAzLjI3OCAwIDAgMC0zLjI4IDMuMTYybC0uMzY1IDEwLjc5NWg3LjI5MWwtLjM2NS0xMC43OTVhMy4yNzggMy4yNzggMCAwIDAtMy4yOC0zLjE2MnpNMjEuMjkyIDE2LjA3OGEzLjI3NyAzLjI3NyAwIDAgMC0zLjI4IDMuMTYybC0uMzY2IDEwLjc5NWg3LjI5MWwtLjM2NS0xMC43OTVhMy4yNzggMy4yNzggMCAwIDAtMy4yOC0zLjE2MnoiIGZpbGw9IiM1MDgwRkEiLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Im0zNi44NzcgMTcuOTg1LTcuOTQ4LjUwNmMtLjYxOS4wMzktMS4yNC4wMzktMS44NTggMGwtNy45NDgtLjUwNmE1LjI0NiA1LjI0NiAwIDAgMC01LjUzIDQuNDY4bC0xLjM0MyA5LjE4MmgzMS41bC0xLjM0My05LjE4MmE1LjI0NiA1LjI0NiAwIDAgMC01LjUzLTQuNDY4eiIgZmlsbD0iIzgwQTNGQyIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTM4LjEzNSAyNi4yNTVoLTIwLjI3Yy0zLjEwMSAwLTUuNjE1IDIuNTA2LTUuNjE1IDUuNTk4IDAgMy4wOTEgMi41MTQgNS41OTcgNS42MTUgNS41OTdoMjAuMjdjMy4xMDEgMCA1LjYxNS0yLjUwNiA1LjYxNS01LjU5NyAwLTMuMDkyLTIuNTE0LTUuNTk4LTUuNjE1LTUuNTk4eiIgZmlsbD0iIzQyNzBGOCIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTM1IDM5LjkyMmMtMy41NDQgMC02LjQxNy0yLjg2NC02LjQxNy02LjM5NyAwLTMuNTMzIDIuODczLTYuMzk3IDYuNDE3LTYuMzk3IDMuNTQzIDAgNi40MTYgMi44NjQgNi40MTYgNi4zOTcgMCAzLjUzMy0yLjg3MyA2LjM5Ny02LjQxNiA2LjM5N3oiIGZpbGw9IiMyQzNFRDAiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTM0Ljk5OSAzNy4xNmEzLjY0IDMuNjQgMCAwIDEtMy42NDYtMy42MzVBMy42NCAzLjY0IDAgMCAxIDM1IDI5Ljg5YTMuNjQgMy42NCAwIDAgMSAzLjY0NiAzLjYzNSAzLjY0IDMuNjQgMCAwIDEtMy42NDYgMy42MzV6IiBmaWxsPSIjRUZGNEZGIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yMC43MDggMzkuOTIyYy0zLjU0MyAwLTYuNDE2LTIuODY0LTYuNDE2LTYuMzk3IDAtMy41MzMgMi44NzMtNi4zOTcgNi40MTYtNi4zOTcgMy41NDQgMCA2LjQxNyAyLjg2NCA2LjQxNyA2LjM5NyAwIDMuNTMzLTIuODczIDYuMzk3LTYuNDE3IDYuMzk3eiIgZmlsbD0iIzJDM0VEMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMjAuNzA4IDM3LjE2YTMuNjQgMy42NCAwIDAgMS0zLjY0Ni0zLjYzNSAzLjY0IDMuNjQgMCAwIDEgMy42NDYtMy42MzUgMy42NCAzLjY0IDAgMCAxIDMuNjQ2IDMuNjM1IDMuNjQgMy42NCAwIDAgMS0zLjY0NiAzLjYzNXoiIGZpbGw9IiNFRkY0RkYiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K);
+    background-repeat: no-repeat;    
+    background-position: center;
+    background-size : contain;
+    
+}
+
+
+.card-top-score{
+    display: flex;
+    align-items: center;
+    margin-right: 0.7rem;
+}
+
+.card-top-score > img {
+    border-style: none;
+    margin-bottom: 3px;
+}
+
+.card-top-score > span{
+    font-size: .875rem;
+    font-weight: 700;
+    margin: 0 0.125rem;
+}
+
+.card-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 0.7rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.sumgo-pay-badge{
+    display: flex;
+    height: 1rem;   
+    border-radius: 4px;
+    padding: 0.1875rem 0.3125rem;
+    background-color: #f0f4ff;
+    width: 70px;
+    margin-left: 1rem;
+    margin-bottom: 0.65rem;
+}
+
+.sumgo-pay-badge > img{
+    width:16px;
+    height:16px ;
+}
+.sumgo-pay-badge > p{
+    font-size: 0.8rem;
+    margin-left: 5px;
+    font-weight: 600;
+    color: rgb(100, 100, 230);
+
+}
+
+/* 광고 */
+#ad-container{
+    width: 60.625rem;
+    margin: auto auto 5rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+#ad-container img{
+    width: 100%;
+    border-radius: 10px;
+}
+/* 상품나열*/
+.product-container{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5rem;
+}
+.content{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+}
+.slider-wrapper {
+    position: relative;
+    align-items: center;
+}
+
+
+.slider-wrapper .slide-button{
+    position: absolute;
+    top: 20%;
+    height: 50px;
+    width: 50px;
+    color:#918c8c;
+    border: 1px solid #e1e1e1;
+    outline: none;
+    background-color: #fff;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(50%);
+}
+.slider-wrapper .slide-button:hover{
+    background:#444;
+}
+.slider-wrapper .slide-button#prev-slide{
+    left: -20px;
+
+}
+.slider-wrapper .slide-button#next-slide{
+    right: -20px;
+    
+}
+
+.slider-wrapper .image-list{
+    display: grid;
+    gap: 9px;
+    font-size: 0; 
+    overflow-x: auto;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+
+.slider-wrapper .image-list .image-item-wrap{
+    width: 235px;
+}
+
+.image-item-box{
+    width: 235px;
+    height: 160px;
+    
+}
+.image-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-item-wrap > p {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    width: 100%;
+    height: 2rem;
+    
+}
+
+footer{
+    border-top: 1px solid #918c8c;
+    height: 300px;
+
 }
 
 
