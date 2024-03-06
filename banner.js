@@ -80,3 +80,4 @@ function checkEnd() {
         $(".next").css("display", "block");
     }
 }
+
